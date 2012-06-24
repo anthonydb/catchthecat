@@ -3,9 +3,10 @@
 # of learning more about Python.
 
 import os
-from randevents import general_events
 import random
 import time
+from randevents import general_events
+from classes import cat
 
 calories = 0
 food = 'x'
@@ -13,6 +14,7 @@ food = 'x'
 def start():
     os.system('cls')
     cls()
+    c = cat()
     foyer()
 
 def cls():
