@@ -19,10 +19,13 @@ def start():
 def cls():
     os.system('cls')
 
+# Create a 20% chance that someone will shout in the house
 def random_event():
-    x = len(general_events) - 1
-    num = random.randint(0,x)
-    print '\nSomeone shouts: \"' + general_events[num] + '\"'
+    draw_event = random.randint(1,5)
+    if draw_event == 4:
+        x = len(general_events) - 1
+        num = random.randint(0,x)
+        print '\nSomeone shouts: \"' + general_events[num] + '\"'
 
 def foyer():
     print '\n\nYou are in the foyer.'
