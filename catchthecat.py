@@ -95,7 +95,7 @@ def study():
         study()    
 
 def greenlr():
-    print '\n\nYou are in the Green Living Room'
+    print '\n\nYou are in the green living room'
     time.sleep(1)
     random_event()
     print '\nYou see a coffee table scattered with books...'
