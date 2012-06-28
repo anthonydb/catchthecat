@@ -12,7 +12,6 @@ calories = 0
 food = 'x'
 
 def start():
-    os.system('cls')
     cls()
     c = cat()
     foyer()
@@ -53,11 +52,14 @@ def kitchen():
     random_event()
     time.sleep(.5)
     print '\nMom is here. She just took two pizzas out of the oven. Now what?'
-    print '\nMove to (F)oyer, (D)ining Room, (L)iving Room or (E)at pizza'
+    print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
     prompt_k = raw_input('Command: ')
     if prompt_k.upper() == 'F':
         cls()
         foyer()
+    elif prompt_k.upper() == 'S':
+        cls()
+        study()
     elif prompt_k.upper() == 'D':
         cls()
         diningroom()
@@ -76,28 +78,117 @@ def study():
     print '\n\nYou are in the Study'
     time.sleep(1)
     random_event()
+    print '\nYou see the shelves lined with books ...'
+    print '\nMove to (F)oyer or (K)itchen'
+    prompt_st = raw_input('Command: ')
+    if prompt_st.upper() == 'F':
+        cls()
+        foyer()
+    if prompt_st.upper() == 'K':
+        cls()
+        kitchen()
+    else:
+        print '\nIncorrect entry'
+        study()    
 
 def greenlr():
     print '\n\nYou are in the Green Living Room'
     time.sleep(1)
     random_event()
-
-def stairsup():
-    print '\n\nYou are at the top of the stairs'
-    time.sleep(1)
-    random_event()
-    time.sleep(.5)
+    print '\nYou see a coffee table scattered with books...'
+    print '\nMove to (F)oyer or (D)ining Room'
+    prompt_gl = raw_input('Command: ')
+    if prompt_gl.upper() == 'F':
+        cls()
+        foyer()
+    if prompt_gl.upper() == 'D':
+        cls()
+        diningroom()
+    else:
+        print '\nIncorrect entry'
+        greenlr()    
 
 def diningroom():
     print '\n\nYou are in the dining room'
     time.sleep(1)
     random_event()
+    print '\nYou see a table with plates placed on it...'
+    print '\nMove to (K)itchen or (G)reen Living Room'
+    prompt_dr = raw_input('Command: ')
+    if prompt_dr.upper() == 'K':
+        cls()
+        kitchen()
+    if prompt_dr.upper() == 'G':
+        cls()
+        greenlr()
+    else:
+        print '\nIncorrect entry'
+        diningroom()    
 
 def livingroom():
     print '\n\nYou entered the living room'
     time.sleep(1)
     random_event()
+    print '\nThere is a couch, two chairs, and a TV...'
+    print '\nMove to (K)itchen'
+    prompt_lr = raw_input('Command: ')
+    if prompt_lr.upper() == 'K':
+        cls()
+        kitchen()
+    else:
+        print '\nIncorrect entry'
+        livingroom()  
 
+def stairsup():
+    print '\n\nYou are at the top of the stairs'
+    time.sleep(1)
+    random_event()
+    print '\nYou see a hallway'
+    print '\nMove to the (O)ffice, (F)oyer, or (B)edroom '
+    prompt_up = raw_input('Command: ')
+    if prompt_up.upper() == 'O':
+        cls()
+        office()
+    if prompt_up.upper() == 'F':
+        cls()
+        foyer()
+    if prompt_up.upper() == 'B':
+        cls()
+        bedroom()
+    else:
+        print '\nIncorrect entry'
+        office()  
+    
+
+def office():
+    print '\n\n You are in the office'
+    time.sleep(1)
+    random_event()
+    print '\nThere is a computer on a desk...'
+    print '\nMove to (S)tairs'
+    prompt_up = raw_input('Command: ')
+    if prompt_up.upper() == 'S':
+        cls()
+        stairsup()
+    else:
+        print '\nIncorrect entry'
+        office()  
+
+def bedroom():
+    print '\n\nYou come into the bedroom'
+    time.sleep(1)
+    random_event()
+    print '\nThere is a bed, beside it is a big dresser.'
+    print '\nMove to (S)tairs'
+    prompt_br = raw_input('Command: ')
+    if prompt_br.upper() == 'S':
+        cls()
+        stairsup()
+    else:
+        print '\nIncorrect entry'
+        bedroom()  
+
+# Consume calories!
 def eat(food):
     os.system('cls')
     global calories
