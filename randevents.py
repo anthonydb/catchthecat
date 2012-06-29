@@ -8,3 +8,19 @@ general_events = [
     'You and me? I don\'t think we\'re on the same page!',
     'Who left the toilet seat up?!'
     ]
+
+locations_list = ['foyer', 'study', 'kitchen', 
+    'living room', 'dining room', 'stairs', 
+    'green living room', 'stairs', 'office', 'bedroom']
+
+run_choices = {
+	'foyer': ['kitchen','study','green living room','stairs'],
+	'kitchen': ['foyer','dining room','living room','study'],
+	'study': ['foyer','kitchen'],
+	'green living room': ['foyer','dining room'],
+	'dining room': ['kitchen', 'green living room'],
+	'living room': ['kitchen'],
+	'stairs': ['office','foyer','bedroom'],
+	'office': ['stairs'],
+	'bedroom': ['stairs']
+    }

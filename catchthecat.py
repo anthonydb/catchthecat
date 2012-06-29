@@ -10,10 +10,11 @@ from classes import cat
 
 calories = 0
 food = 'x'
+c = cat()
+
 
 def start():
     cls()
-    c = cat()
     foyer()
 
 def cls():
@@ -29,6 +30,7 @@ def random_event():
 
 def foyer():
     print '\n\nYou are in the foyer.'
+    kitty_run()
     print 'You see stairs going up and various rooms. Now what?'
     print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
     prompt_f = raw_input('Command: ')
@@ -51,9 +53,7 @@ def foyer():
 
 def kitchen():
     print '\n\nYou are in the Kitchen'
-    time.sleep(1)
-    random_event()
-    time.sleep(.5)
+    kitty_run()
     print '\nMom is here. She just took two pizzas out of the oven. Now what?'
     print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
     prompt_k = raw_input('Command: ')
@@ -79,8 +79,7 @@ def kitchen():
 
 def study():
     print '\n\nYou are in the Study'
-    time.sleep(1)
-    random_event()
+    kitty_run()
     print '\nYou see the shelves lined with books ...'
     print '\nMove to (F)oyer or (K)itchen'
     prompt_st = raw_input('Command: ')
@@ -96,8 +95,7 @@ def study():
 
 def greenlr():
     print '\n\nYou are in the green living room'
-    time.sleep(1)
-    random_event()
+    kitty_run()
     print '\nYou see a coffee table scattered with books...'
     print '\nMove to (F)oyer or (D)ining Room'
     prompt_gl = raw_input('Command: ')
@@ -113,8 +111,7 @@ def greenlr():
 
 def diningroom():
     print '\n\nYou are in the dining room'
-    time.sleep(1)
-    random_event()
+    kitty_run()
     print '\nYou see a table with plates placed on it...'
     print '\nMove to (K)itchen or (G)reen Living Room'
     prompt_dr = raw_input('Command: ')
@@ -130,8 +127,7 @@ def diningroom():
 
 def livingroom():
     print '\n\nYou entered the living room'
-    time.sleep(1)
-    random_event()
+    kitty_run()
     print '\nThere is a couch, two chairs, and a TV...'
     print '\nMove to (K)itchen'
     prompt_lr = raw_input('Command: ')
@@ -144,10 +140,9 @@ def livingroom():
 
 def stairsup():
     print '\n\nYou are at the top of the stairs'
-    time.sleep(1)
-    random_event()
+    kitty_run()
     print '\nYou see a hallway'
-    print '\nMove to the (O)ffice, (F)oyer, or (B)edroom '
+    print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
     prompt_up = raw_input('Command: ')
     if prompt_up.upper() == 'O':
         cls()
@@ -164,10 +159,9 @@ def stairsup():
     
 
 def office():
-    print '\n\n You are in the office'
-    time.sleep(1)
-    random_event()
-    print '\nThere is a computer on a desk...'
+    print '\n\nYou are in the office'
+    kitty_run()
+    print '\nThere is a computer on a desk ...'
     print '\nMove to (S)tairs'
     prompt_up = raw_input('Command: ')
     if prompt_up.upper() == 'S':
@@ -179,9 +173,8 @@ def office():
 
 def bedroom():
     print '\n\nYou come into the bedroom'
-    time.sleep(1)
-    random_event()
-    print '\nThere is a bed, beside it is a big dresser.'
+    kitty_run()
+    print '\nThere is a bed; beside it is a large dresser.'
     print '\nMove to (S)tairs'
     prompt_br = raw_input('Command: ')
     if prompt_br.upper() == 'S':
@@ -190,6 +183,12 @@ def bedroom():
     else:
         print '\nIncorrect entry'
         bedroom()  
+
+# Move that kitty! Also have something random happen!
+def kitty_run():
+    c.run()
+    time.sleep(1)
+    random_event()    
 
 # Consume calories!
 def eat(food):
