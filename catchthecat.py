@@ -12,13 +12,15 @@ calories = 0
 food = 'x'
 c = cat()
 
-
 def start():
     cls()
     foyer()
 
 def cls():
-    os.system('cls')
+    if os.name == 'posix':
+        os.system('clear')
+    elif os.name == 'nt':
+        os.system('cls')
 
 # Create a 20% chance that someone will shout in the house
 def random_event():
