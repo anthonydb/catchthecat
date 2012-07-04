@@ -7,6 +7,7 @@ import random
 import time
 from randevents import general_events
 from classes import cat
+from art import splash_text
 
 calories = 0
 food = 'x'
@@ -14,6 +15,8 @@ c = cat()
 
 def start():
     cls()
+    print splash_text
+    time.sleep(3)
     foyer()
 
 def cls():
