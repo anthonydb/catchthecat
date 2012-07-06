@@ -6,12 +6,13 @@ import os
 import random
 import time
 from randevents import general_events
-from classes import cat
+from classes import cat, player
 from art import splash_text
 
 calories = 0
 food = 'x'
 c = cat()
+p = player()
 
 def start():
     cls()
@@ -34,7 +35,8 @@ def random_event():
         print '\nSomeone shouts: \"' + general_events[num] + '\"'
 
 def foyer():
-    print '\n\nYou are in the foyer.'
+    print '\n\n'
+    p.reveal()
     kitty_run()
     print 'You see stairs going up and various rooms. Now what?'
     print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
@@ -57,7 +59,9 @@ def foyer():
         foyer()
 
 def kitchen():
-    print '\n\nYou are in the Kitchen'
+    print '\n\n'
+    p.location = 'kitchen'
+    p.reveal()
     kitty_run()
     print '\nMom is here. She just took two pizzas out of the oven. Now what?'
     print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
@@ -83,7 +87,9 @@ def kitchen():
         kitchen()
 
 def study():
-    print '\n\nYou are in the Study'
+    print '\n\n'
+    p.location = 'study'
+    p.reveal()
     kitty_run()
     print '\nYou see the shelves lined with books ...'
     print '\nMove to (F)oyer or (K)itchen'
@@ -99,7 +105,8 @@ def study():
         study()    
 
 def greenlr():
-    print '\n\nYou are in the green living room'
+    print '\n\n'
+    p.location = 'green living room'
     kitty_run()
     print '\nYou see a coffee table scattered with books...'
     print '\nMove to (F)oyer or (D)ining Room'
@@ -115,7 +122,9 @@ def greenlr():
         greenlr()    
 
 def diningroom():
-    print '\n\nYou are in the dining room'
+    print '\n\n'
+    p.location = 'dining room'
+    p.reveal()
     kitty_run()
     print '\nYou see a table with plates placed on it...'
     print '\nMove to (K)itchen or (G)reen Living Room'
@@ -131,7 +140,9 @@ def diningroom():
         diningroom()    
 
 def livingroom():
-    print '\n\nYou entered the living room'
+    print '\n\n'
+    p.location = 'living room'
+    p.reveal()
     kitty_run()
     print '\nThere is a couch, two chairs, and a TV...'
     print '\nMove to (K)itchen'
@@ -144,7 +155,9 @@ def livingroom():
         livingroom()  
 
 def stairsup():
-    print '\n\nYou are at the top of the stairs'
+    print '\n\n'
+    p.location = 'stairs'
+    p.reveal()
     kitty_run()
     print '\nYou see a hallway'
     print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
@@ -164,7 +177,9 @@ def stairsup():
     
 
 def office():
-    print '\n\nYou are in the office'
+    print '\n\n'
+    p.location = 'office'
+    p.reveal()
     kitty_run()
     print '\nThere is a computer on a desk ...'
     print '\nMove to (S)tairs'
@@ -177,7 +192,9 @@ def office():
         office()  
 
 def bedroom():
-    print '\n\nYou come into the bedroom'
+    print '\n\n'
+    p.location = 'bedroom'
+    p.reveal()
     kitty_run()
     print '\nThere is a bed; beside it is a large dresser.'
     print '\nMove to (S)tairs'
