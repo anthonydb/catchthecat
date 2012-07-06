@@ -36,8 +36,10 @@ def random_event():
 
 def foyer():
     print '\n\n'
+    p.location = 'foyer'
     p.reveal()
     kitty_run()
+    catch_test()
     print 'You see stairs going up and various rooms. Now what?'
     print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
     prompt_f = raw_input('Command: ')
@@ -63,6 +65,7 @@ def kitchen():
     p.location = 'kitchen'
     p.reveal()
     kitty_run()
+    catch_test()
     print '\nMom is here. She just took two pizzas out of the oven. Now what?'
     print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
     prompt_k = raw_input('Command: ')
@@ -91,6 +94,7 @@ def study():
     p.location = 'study'
     p.reveal()
     kitty_run()
+    catch_test()
     print '\nYou see the shelves lined with books ...'
     print '\nMove to (F)oyer or (K)itchen'
     prompt_st = raw_input('Command: ')
@@ -107,7 +111,9 @@ def study():
 def greenlr():
     print '\n\n'
     p.location = 'green living room'
+    p.reveal()
     kitty_run()
+    catch_test()
     print '\nYou see a coffee table scattered with books...'
     print '\nMove to (F)oyer or (D)ining Room'
     prompt_gl = raw_input('Command: ')
@@ -126,6 +132,7 @@ def diningroom():
     p.location = 'dining room'
     p.reveal()
     kitty_run()
+    catch_test()
     print '\nYou see a table with plates placed on it...'
     print '\nMove to (K)itchen or (G)reen Living Room'
     prompt_dr = raw_input('Command: ')
@@ -144,6 +151,7 @@ def livingroom():
     p.location = 'living room'
     p.reveal()
     kitty_run()
+    catch_test()
     print '\nThere is a couch, two chairs, and a TV...'
     print '\nMove to (K)itchen'
     prompt_lr = raw_input('Command: ')
@@ -159,6 +167,7 @@ def stairsup():
     p.location = 'stairs'
     p.reveal()
     kitty_run()
+    catch_test()
     print '\nYou see a hallway'
     print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
     prompt_up = raw_input('Command: ')
@@ -175,12 +184,12 @@ def stairsup():
         print '\nIncorrect entry'
         office()  
     
-
 def office():
     print '\n\n'
     p.location = 'office'
     p.reveal()
     kitty_run()
+    catch_test()
     print '\nThere is a computer on a desk ...'
     print '\nMove to (S)tairs'
     prompt_up = raw_input('Command: ')
@@ -196,6 +205,7 @@ def bedroom():
     p.location = 'bedroom'
     p.reveal()
     kitty_run()
+    catch_test()
     print '\nThere is a bed; beside it is a large dresser.'
     print '\nMove to (S)tairs'
     prompt_br = raw_input('Command: ')
@@ -221,5 +231,11 @@ def eat(food):
         print 'You have eaten %s calories!' % str(calories)
     if calories > 1999:
         print '\nBetter slow down on the food there, big boy!'
+
+def catch_test():
+    if c.location == p.location:
+        print 'You caught the cat!'
+    else:
+        pass
     
 start()
