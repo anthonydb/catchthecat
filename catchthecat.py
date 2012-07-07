@@ -259,7 +259,7 @@ def move_actions():
 
 # Consume calories!
 def eat(food):
-    os.system('cls')
+    cls()
     global calories
     if food == 'pizza':
         calories = calories + 500
