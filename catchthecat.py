@@ -14,13 +14,14 @@ food = 'x'
 c = cat()
 p = player()
 
+# Set up the player and kitty. Player in foyer and kitty somewhere random.
 def start():
     cls()
     print splash_text
     time.sleep(3)
     c.reveal()
     p.reveal()
-    print 'You see stairs going up and various rooms. Now what?'
+    print 'Let\'s go! You see stairs going up to several rooms ...'
     print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
     prompt_f = raw_input('Command: ')
     if prompt_f.upper() == 'K':
@@ -46,7 +47,7 @@ def foyer():
     p.reveal()
     kitty_run()
     catch_test()
-    print 'You see stairs going up and various rooms. Now what?'
+    print 'You see stairs going up to some rooms ... '
     print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
     prompt_f = raw_input('Command: ')
     if prompt_f.upper() == 'K':
@@ -72,7 +73,7 @@ def kitchen():
     p.reveal()
     kitty_run()
     catch_test()
-    print '\nMom is here. She just took two pizzas out of the oven. Now what?'
+    print '\nMom just took two pizzas out of the oven ... '
     print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
     prompt_k = raw_input('Command: ')
     if prompt_k.upper() == 'F':
@@ -120,7 +121,7 @@ def greenlr():
     p.reveal()
     kitty_run()
     catch_test()
-    print '\nYou see a coffee table scattered with books...'
+    print '\nYou see a coffee table scattered with books ...'
     print '\nMove to (F)oyer or (D)ining Room'
     prompt_gl = raw_input('Command: ')
     if prompt_gl.upper() == 'F':
@@ -139,7 +140,7 @@ def diningroom():
     p.reveal()
     kitty_run()
     catch_test()
-    print '\nYou see a table with plates placed on it...'
+    print '\nYou see a table with plates placed on it ...'
     print '\nMove to (K)itchen or (G)reen Living Room'
     prompt_dr = raw_input('Command: ')
     if prompt_dr.upper() == 'K':
@@ -158,7 +159,7 @@ def livingroom():
     p.reveal()
     kitty_run()
     catch_test()
-    print '\nThere is a couch, two chairs, and a TV...'
+    print '\nThere is a couch, two chairs, and a TV ...'
     print '\nMove to (K)itchen'
     prompt_lr = raw_input('Command: ')
     if prompt_lr.upper() == 'K':
@@ -174,7 +175,7 @@ def stairsup():
     p.reveal()
     kitty_run()
     catch_test()
-    print '\nYou see a hallway'
+    print '\nYou see a hallway ...'
     print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
     prompt_up = raw_input('Command: ')
     if prompt_up.upper() == 'O':
@@ -212,7 +213,7 @@ def bedroom():
     p.reveal()
     kitty_run()
     catch_test()
-    print '\nThere is a bed; beside it is a large dresser.'
+    print '\nThere is a bed; beside it is a large dresser ...'
     print '\nMove to (S)tairs'
     prompt_br = raw_input('Command: ')
     if prompt_br.upper() == 'S':
