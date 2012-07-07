@@ -18,21 +18,27 @@ def start():
     cls()
     print splash_text
     time.sleep(3)
-    foyer()
-
-def cls():
-    if os.name == 'posix':
-        os.system('clear')
-    elif os.name == 'nt':
-        os.system('cls')
-
-# Create a 20% chance that someone will shout in the house
-def random_event():
-    draw_event = random.randint(1,5)
-    if draw_event == 4:
-        x = len(general_events) - 1
-        num = random.randint(0,x)
-        print '\nSomeone shouts: \"' + general_events[num] + '\"'
+    c.reveal()
+    p.reveal()
+    print 'You see stairs going up and various rooms. Now what?'
+    print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
+    prompt_f = raw_input('Command: ')
+    if prompt_f.upper() == 'K':
+        cls()
+        kitchen()
+    elif prompt_f.upper() == 'S':
+        cls()
+        study()
+    elif prompt_f.upper() == 'G':
+        cls()
+        greenlr()
+    elif prompt_f.upper() == 'U':
+        cls()
+        stairsup()
+    else:
+        cls()
+        print '\nIncorrect entry'
+        foyer()
 
 def foyer():
     print '\n\n'
@@ -216,6 +222,13 @@ def bedroom():
         print '\nIncorrect entry'
         bedroom()  
 
+# Clear the screen using appropriate system command
+def cls():
+    if os.name == 'posix':
+        os.system('clear')
+    elif os.name == 'nt':
+        os.system('cls')
+
 # Move that kitty! Also have something random happen!
 def kitty_run():
     c.run()
@@ -232,6 +245,15 @@ def eat(food):
     if calories > 1999:
         print '\nBetter slow down on the food there, big boy!'
 
+# Create a 20% chance that someone will shout in the house
+def random_event():
+    draw_event = random.randint(1,5)
+    if draw_event == 4:
+        x = len(general_events) - 1
+        num = random.randint(0,x)
+        print '\nSomeone shouts: \"' + general_events[num] + '\"'
+
+# Test whether player and kitty have arrived in the same place
 def catch_test():
     if c.location == p.location:
         print 'You caught the cat!'

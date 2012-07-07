@@ -11,8 +11,8 @@ class cat(object):
         l = len(locations_list) - 1
         self.location = locations_list[random.randint(1,l)]
 
-    #def reveal(self):
-    #    print '%s ran to the %s' % (self.name, self.location)
+    def reveal(self):
+        print '%s ran to the %s' % (self.name, self.location)
 
     def run(self):
         choices = run_choices[self.location]
