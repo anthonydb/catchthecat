@@ -44,8 +44,7 @@ def start():
 def foyer():
     print '\n\n'
     p.location = 'foyer'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print 'You see stairs going up to some rooms ... '
     print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
@@ -70,8 +69,7 @@ def foyer():
 def kitchen():
     print '\n\n'
     p.location = 'kitchen'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print '\nMom just took two pizzas out of the oven ... '
     print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
@@ -99,8 +97,7 @@ def kitchen():
 def study():
     print '\n\n'
     p.location = 'study'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print '\nYou see the shelves lined with books ...'
     print '\nMove to (F)oyer or (K)itchen'
@@ -118,8 +115,7 @@ def study():
 def greenlr():
     print '\n\n'
     p.location = 'green living room'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print '\nYou see a coffee table scattered with books ...'
     print '\nMove to (F)oyer or (D)ining Room'
@@ -137,8 +133,7 @@ def greenlr():
 def diningroom():
     print '\n\n'
     p.location = 'dining room'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print '\nYou see a table with plates placed on it ...'
     print '\nMove to (K)itchen or (G)reen Living Room'
@@ -156,8 +151,7 @@ def diningroom():
 def livingroom():
     print '\n\n'
     p.location = 'living room'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print '\nThere is a couch, two chairs, and a TV ...'
     print '\nMove to (K)itchen'
@@ -172,8 +166,7 @@ def livingroom():
 def stairsup():
     print '\n\n'
     p.location = 'stairs'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print '\nYou see a hallway ...'
     print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
@@ -194,8 +187,7 @@ def stairsup():
 def office():
     print '\n\n'
     p.location = 'office'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print '\nThere is a computer on a desk ...'
     print '\nMove to (S)tairs'
@@ -210,8 +202,7 @@ def office():
 def bedroom():
     print '\n\n'
     p.location = 'bedroom'
-    p.reveal()
-    kitty_run()
+    move_actions()
     catch_test()
     print '\nThere is a bed; beside it is a large dresser ...'
     print '\nMove to (S)tairs'
@@ -231,7 +222,8 @@ def cls():
         os.system('cls')
 
 # Move that kitty! Also have something random happen!
-def kitty_run():
+def move_actions():
+    p.reveal()
     c.run()
     c.reveal()
     time.sleep(1)

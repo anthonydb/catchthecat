@@ -25,6 +25,6 @@ class player(object):
         self.location = 'foyer'
 
     def reveal(self):
-        print '%s ran to the %s' % (self.name, self.location)
+        print '%s is in the %s' % (self.name, self.location)
 
 
