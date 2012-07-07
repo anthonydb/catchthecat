@@ -19,8 +19,6 @@ class cat(object):
         l = len(choices) - 1
         self.location = choices[random.randint(0,l)]
 
-        print '%s ran to the %s' % (self.name, self.location)
-
 class player(object):
     def __init__(self):
         self.name = 'Player'

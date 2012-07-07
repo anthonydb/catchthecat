@@ -233,6 +233,7 @@ def cls():
 # Move that kitty! Also have something random happen!
 def kitty_run():
     c.run()
+    c.reveal()
     time.sleep(1)
     random_event()    
 
