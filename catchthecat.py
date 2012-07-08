@@ -1,4 +1,4 @@
-# Catch the Cat is a basic text adventure game by
+# Catch the Cat is a basic text game written by
 # Anthony DeBarros and Nino DeBarros, built for the purpose
 # of learning more about Python.
 
@@ -10,6 +10,7 @@ from classes import cat, player
 from art import splash_text, win_text
 
 calories = 0
+move_count = 0
 food = 'x'
 c = cat()
 p = player()
@@ -46,8 +47,7 @@ def foyer():
     print '\n\n'
     p.location = 'foyer'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print 'You see stairs going up to some rooms ... '
@@ -74,8 +74,7 @@ def kitchen():
     print '\n\n'
     p.location = 'kitchen'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print '\nMom just took two pizzas out of the oven ... '
@@ -105,8 +104,7 @@ def study():
     print '\n\n'
     p.location = 'study'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print '\nYou see the shelves lined with books ...'
@@ -126,8 +124,7 @@ def greenlr():
     print '\n\n'
     p.location = 'green living room'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print '\nYou see a coffee table scattered with books ...'
@@ -147,8 +144,7 @@ def diningroom():
     print '\n\n'
     p.location = 'dining room'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print '\nYou see a table with plates placed on it ...'
@@ -168,8 +164,7 @@ def livingroom():
     print '\n\n'
     p.location = 'living room'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print '\nThere is a couch, two chairs, and a TV ...'
@@ -186,8 +181,7 @@ def stairsup():
     print '\n\n'
     p.location = 'stairs'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print '\nYou see a hallway ...'
@@ -210,8 +204,7 @@ def office():
     print '\n\n'
     p.location = 'office'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print '\nThere is a computer on a desk ...'
@@ -228,8 +221,7 @@ def bedroom():
     print '\n\n'
     p.location = 'bedroom'
     move_actions()
-    status = catch_test()
-    if status == True:
+    if catch_test() == True:
         win()    
     else:
         print '\nThere is a bed; beside it is a large dresser ...'
@@ -251,6 +243,9 @@ def cls():
 
 # Move that kitty! Also have something random happen!
 def move_actions():
+    global move_count
+    move_count += 1
+    print '                                   Move: ' + str(move_count)
     p.reveal()
     c.run()
     c.reveal()
@@ -284,7 +279,7 @@ def catch_test():
 
 # FTW!    
 def win():
-        print '\n\nYou caught the cat!'
+        print '\n\nYou caught the cat in ' + str(move_count) + ' moves!' 
         print win_text
 
 start()
