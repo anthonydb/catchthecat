@@ -7,7 +7,7 @@ import random
 import time
 from randevents import general_events
 from classes import cat, player
-from art import splash_text
+from art import splash_text, win_text
 
 calories = 0
 food = 'x'
@@ -285,6 +285,6 @@ def catch_test():
 # FTW!    
 def win():
         print '\n\nYou caught the cat!'
-        print '\nYOU WIN!!!'
+        print win_text
 
 start()
