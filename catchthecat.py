@@ -22,6 +22,8 @@ def start():
     print 'Welcome to Catch the Cat! In this game, the objective is to'
     print 'catch the cat running through the rooms. When you land in'
     print 'the same room as the cat, you win! Enjoy!'
+    c.name = raw_input('\nType your cat\'s name and press Enter: ')
+    p.name = raw_input('\nType your name and press Enter: ')
     raw_input('\nPress Enter to begin!')
     cls()
     foyer()
@@ -188,7 +190,7 @@ def stairsup():
         else:
             cls()
             print '\nIncorrect entry'
-            office()  
+            stairsup()  
     
 def office():
     print '\n\n'
