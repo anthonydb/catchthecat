@@ -11,6 +11,7 @@ from art import splash_text, win_text
 
 calories = 0
 move_count = -1
+entry_flag = True
 food = 'x'
 c = cat()
 p = player()
@@ -52,8 +53,7 @@ def foyer():
             cls()
             stairsup()
         else:
-            cls()
-            print '\nIncorrect entry'
+            incorrect_entry()
             foyer()
 
 def kitchen():
@@ -83,8 +83,7 @@ def kitchen():
             eat(food)
             kitchen()
         else:
-            cls()
-            print '\nIncorrect entry'
+            incorrect_entry()
             kitchen()
 
 def study():
@@ -104,8 +103,7 @@ def study():
             cls()
             kitchen()
         else:
-            cls()
-            print '\nIncorrect entry'
+            incorrect_entry()
             study()    
 
 def greenlr():
@@ -125,8 +123,7 @@ def greenlr():
             cls()
             diningroom()
         else:
-            cls()
-            print '\nIncorrect entry'
+            incorrect_entry()
             greenlr()    
 
 def diningroom():
@@ -146,8 +143,7 @@ def diningroom():
             cls()
             greenlr()
         else:
-            cls()
-            print '\nIncorrect entry'
+            incorrect_entry()
             diningroom()    
 
 def livingroom():
@@ -164,8 +160,7 @@ def livingroom():
             cls()
             kitchen()
         else:
-            cls()
-            print '\nIncorrect entry'
+            incorrect_entry()
             livingroom()  
 
 def stairsup():
@@ -188,8 +183,7 @@ def stairsup():
             cls()
             bedroom()
         else:
-            cls()
-            print '\nIncorrect entry'
+            incorrect_entry()
             stairsup()  
     
 def office():
@@ -206,8 +200,7 @@ def office():
             cls()
             stairsup()
         else:
-            cls()
-            print '\nIncorrect entry'
+            incorrect_entry()
             office()  
 
 def bedroom():
@@ -224,7 +217,7 @@ def bedroom():
             cls()
             stairsup()
         else:
-            print '\nIncorrect entry'
+            incorrect_entry()
             bedroom()  
 
 # Clear the screen using appropriate system command
@@ -237,15 +230,24 @@ def cls():
 # Move that kitty! Also have something random happen!
 def move_actions():
     global move_count
+    global entry_flag
     move_count += 1
     print '                                   Move: ' + str(move_count)
     p.reveal()
-    c.run()
+    if entry_flag == True:
+        c.run()
     if move_count == 0 and c.location == 'foyer':
         c.run()
     c.reveal()
     time.sleep(1)
-    random_event()    
+    random_event()
+    entry_flag = True    
+
+def incorrect_entry():
+    cls()
+    print '\nIncorrect entry'
+    global entry_flag
+    entry_flag = False    
 
 # Consume calories!
 def eat(food):
