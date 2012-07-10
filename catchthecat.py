@@ -10,7 +10,7 @@ from classes import cat, player
 from art import splash_text, win_text
 
 calories = 0
-move_count = 0
+move_count = -1
 food = 'x'
 c = cat()
 p = player()
@@ -19,28 +19,12 @@ p = player()
 def start():
     cls()
     print splash_text
-    time.sleep(3)
-    c.reveal()
-    p.reveal()
-    print 'Let\'s go! You see stairs going up to several rooms ...'
-    print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
-    prompt_f = raw_input('Command: ')
-    if prompt_f.upper() == 'K':
-        cls()
-        kitchen()
-    elif prompt_f.upper() == 'S':
-        cls()
-        study()
-    elif prompt_f.upper() == 'G':
-        cls()
-        greenlr()
-    elif prompt_f.upper() == 'U':
-        cls()
-        stairsup()
-    else:
-        cls()
-        print '\nIncorrect entry'
-        foyer()
+    print 'Welcome to Catch the Cat! In this game, the objective is to'
+    print 'catch the cat running through the rooms. When you land in'
+    print 'the same room as the cat, you win! Enjoy!'
+    raw_input('\nPress Enter to begin!')
+    cls()
+    foyer()
 
 # These are the locations in the house.
 def foyer():
@@ -97,6 +81,7 @@ def kitchen():
             eat(food)
             kitchen()
         else:
+            cls()
             print '\nIncorrect entry'
             kitchen()
 
@@ -117,6 +102,7 @@ def study():
             cls()
             kitchen()
         else:
+            cls()
             print '\nIncorrect entry'
             study()    
 
@@ -137,6 +123,7 @@ def greenlr():
             cls()
             diningroom()
         else:
+            cls()
             print '\nIncorrect entry'
             greenlr()    
 
@@ -157,6 +144,7 @@ def diningroom():
             cls()
             greenlr()
         else:
+            cls()
             print '\nIncorrect entry'
             diningroom()    
 
@@ -174,6 +162,7 @@ def livingroom():
             cls()
             kitchen()
         else:
+            cls()
             print '\nIncorrect entry'
             livingroom()  
 
@@ -197,6 +186,7 @@ def stairsup():
             cls()
             bedroom()
         else:
+            cls()
             print '\nIncorrect entry'
             office()  
     
@@ -214,6 +204,7 @@ def office():
             cls()
             stairsup()
         else:
+            cls()
             print '\nIncorrect entry'
             office()  
 
