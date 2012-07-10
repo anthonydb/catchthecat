@@ -99,7 +99,7 @@ def study():
         if prompt_st.upper() == 'F':
             cls()
             foyer()
-        if prompt_st.upper() == 'K':
+        elif prompt_st.upper() == 'K':
             cls()
             kitchen()
         else:
@@ -119,7 +119,7 @@ def greenlr():
         if prompt_gl.upper() == 'F':
             cls()
             foyer()
-        if prompt_gl.upper() == 'D':
+        elif prompt_gl.upper() == 'D':
             cls()
             diningroom()
         else:
@@ -139,7 +139,7 @@ def diningroom():
         if prompt_dr.upper() == 'K':
             cls()
             kitchen()
-        if prompt_dr.upper() == 'G':
+        elif prompt_dr.upper() == 'G':
             cls()
             greenlr()
         else:
@@ -176,10 +176,10 @@ def stairsup():
         if prompt_up.upper() == 'O':
             cls()
             office()
-        if prompt_up.upper() == 'F':
+        elif prompt_up.upper() == 'F':
             cls()
             foyer()
-        if prompt_up.upper() == 'B':
+        elif prompt_up.upper() == 'B':
             cls()
             bedroom()
         else:
