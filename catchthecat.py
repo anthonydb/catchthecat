@@ -239,6 +239,8 @@ def move_actions():
     print '                                   Move: ' + str(move_count)
     p.reveal()
     c.run()
+    if move_count == 0 and c.location == 'foyer':
+        c.run()
     c.reveal()
     time.sleep(1)
     random_event()    
