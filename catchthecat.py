@@ -5,8 +5,10 @@
 import os
 import random
 import time
+from datetime import datetime
 from randevents import general_events
 from classes import cat, player
+from db import make_db, insert_db, results_db
 from art import splash_text, win_text
 
 calories = 0
@@ -18,6 +20,7 @@ p = player()
 
 # Set up the player and kitty. Player in foyer and kitty somewhere random.
 def start():
+    make_db()
     cls()
     print splash_text
     print 'Welcome to Catch the Cat! In this game, the objective is to'
@@ -276,7 +279,12 @@ def catch_test():
 
 # FTW!    
 def win():
-        print '\n\nYou caught the cat in ' + str(move_count) + ' moves!' 
-        print win_text
+    global move_count    
+    print '\n\nYou caught the cat in ' + str(move_count) + ' moves!' 
+    print win_text
+    insert_db(p.name, move_count, datetime.now())
+    results_db()
 
+
+# Start the game
 start()
