@@ -283,8 +283,9 @@ def win():
     print '\n\nYou caught the cat in ' + str(move_count) + ' moves!' 
     print win_text
     insert_db(p.name, move_count, datetime.now())
+    raw_input('\nPress Enter to see a list of leaders!')
+    cls()
     results_db()
-
 
 # Start the game
 start()
