@@ -23,9 +23,12 @@ def start():
     make_db()
     cls()
     print splash_text
-    print 'Welcome to Catch the Cat! In this game, the objective is to'
-    print 'catch the cat running through the rooms. When you land in'
-    print 'the same room as the cat, you win! Enjoy!'
+    print """
+Welcome to Catch the Cat! In this game, the objective is to
+catch the cat running through the rooms. Every time you move to
+a new room, the cat moves too! If you land in the same room as 
+the cat, you win! Enjoy!
+    """
     c.name = raw_input('\nType your cat\'s name and press Enter: ')
     p.name = raw_input('\nType your name and press Enter: ')
     raw_input('\nPress Enter to begin!')
@@ -40,8 +43,8 @@ def foyer():
     if catch_test() == True:
         win()    
     else:
-        print 'You see stairs going up to some rooms ... '
-        print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or go (U)p'
+        print 'You see stairs that lead up to a hallway ... '
+        print '\n\nMove to (K)itchen, (S)tudy, (G)reen Living Room or (U)p stairs'
         prompt_f = raw_input('Command: ')
         if prompt_f.upper() == 'K':
             cls()
@@ -67,7 +70,7 @@ def kitchen():
         win()    
     else:
         print '\nMom just took two pizzas out of the oven ... '
-        print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
+        print '\n\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
         prompt_k = raw_input('Command: ')
         if prompt_k.upper() == 'F':
             cls()
@@ -96,7 +99,7 @@ def study():
     if catch_test() == True:
         win()    
     else:
-        print '\nYou see the shelves lined with books ...'
+        print '\nYou see shelves lined with books ...'
         print '\nMove to (F)oyer or (K)itchen'
         prompt_st = raw_input('Command: ')
         if prompt_st.upper() == 'F':
@@ -136,7 +139,7 @@ def diningroom():
     if catch_test() == True:
         win()    
     else:
-        print '\nYou see a table with plates placed on it ...'
+        print '\nYou see a table with plates set on it ...'
         print '\nMove to (K)itchen or (G)reen Living Room'
         prompt_dr = raw_input('Command: ')
         if prompt_dr.upper() == 'K':
@@ -173,7 +176,7 @@ def stairsup():
     if catch_test() == True:
         win()    
     else:
-        print '\nYou see a hallway ...'
+        print '\nYou\'re in an upstairs hallway ...'
         print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
         prompt_up = raw_input('Command: ')
         if prompt_up.upper() == 'O':
