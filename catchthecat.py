@@ -9,7 +9,7 @@ from datetime import datetime
 from randevents import general_events
 from classes import cat, player
 from db import make_db, insert_db, results_db
-from art import splash_text, win_text
+from art import splash_text, win_text, house_diagram
 
 calories = 0
 move_count = -1
@@ -31,6 +31,9 @@ the cat, you win! Enjoy!
     """
     c.name = raw_input('\nType your cat\'s name and press Enter: ')
     p.name = raw_input('\nType your name and press Enter: ')
+    cls()
+    print '\nHere is a diagram of the house. Take a close look!'
+    print house_diagram
     raw_input('\nPress Enter to begin!')
     cls()
     foyer()
