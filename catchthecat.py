@@ -103,7 +103,7 @@ def study():
         win()    
     else:
         print '\nYou see shelves lined with books ...'
-        print '\nMove to (F)oyer or (K)itchen'
+        print '\nMove to (F)oyer or (K)itchen or (R)ead a book'
         prompt_st = raw_input('Command: ')
         if prompt_st.upper() == 'F':
             cls()
@@ -111,6 +111,9 @@ def study():
         elif prompt_st.upper() == 'K':
             cls()
             kitchen()
+        elif prompt_st.upper() == 'R':
+            read()
+            study()
         else:
             incorrect_entry()
             study()    
@@ -267,6 +270,11 @@ def eat(food):
         print 'You have eaten %s calories!' % str(calories)
     if calories > 1999:
         print '\nBetter slow down on the food there, big boy!'
+
+# Get cultured!
+def read():
+    cls()
+    print '\n"Let us go then, you and I, when the evening is spread out against the sky ..."'
 
 # Create a 20% chance that someone will shout in the house
 def random_event():
