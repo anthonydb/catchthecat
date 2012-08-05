@@ -6,7 +6,7 @@ import os
 import random
 import time
 from datetime import datetime
-from randevents import general_events
+from randevents import general_events, book_quotes
 from classes import cat, player
 from db import make_db, insert_db, results_db
 from art import splash_text, win_text, house_diagram
@@ -269,13 +269,21 @@ def eat(food):
     if food == 'pizza':
         calories = calories + 500
         print 'You have eaten %s calories!' % str(calories)
+        print 'This costs 1 move'
     if calories > 1999:
         print '\nBetter slow down on the food there, big boy!'
+        print 'This cost you another move.'
 
 # Get cultured!
 def read():
     cls()
-    print '\n"Let us go then, you and I, when the evening is spread out against the sky ..."'
+    r = len(book_quotes) - 1
+    num = random.randint(0,r)
+    print '\n\nYou take a book off the shelf and read:\n\n'
+    print '\"%s\"\n  -- %s\n\n' % (book_quotes[num]['quote'], book_quotes[num]['title'])
+    print 'This costs 1 move'
+    raw_input('\nPress Enter to continue!')
+    cls()
 
 # Create a 20% chance that someone will shout in the house
 def random_event():

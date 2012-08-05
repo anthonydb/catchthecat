@@ -3,7 +3,7 @@ general_events = [
     'The phone\'s ringing! It\'s mom\'s sister!',
     'Can someone bring down all the laundry?!',
     'A thunderstorm is coming! Bring in the furniture!',
-    'Quiet! Dad fell asleep on the couch!'
+    'Quiet! Dad fell asleep on the couch!',
     'Ack! We are out of toilet paper again!',
     'The AC is broken! Call the repairman!',
     'You and me? I don\'t think we\'re on the same page!',
@@ -25,3 +25,12 @@ run_choices = {
 	'office': ['stairs'],
 	'bedroom': ['stairs']
     }
+
+book_quotes = [
+    {'title': 'The Love Song of J. Alfred Prufrock by T.S. Eliot', 'quote': 'In the room the women come and go talking of Michelangelo.'},
+    {'title': 'Pride and Prejudice by Jane Austen', 'quote': 'Angry people are not always wise.'},
+    {'title': '1984 by George Orwell', 'quote': 'He who controls the past controls the future.'},
+    {'title': 'The Bible', 'quote': 'Love your neighbor as yourself.'},
+    {'title': 'The Great Gatsby by F. Scott Fitzgerald', 'quote': 'There is no confusion like the confusion of a simple mind.'},
+    {'title': 'To Kill a Mockingbird by Harper Lee', 'quote': 'People generally see what they look for, and hear what they listen for.'}
+]
