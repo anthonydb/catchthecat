@@ -40,14 +40,14 @@ the cat, you win! Enjoy!
 
 # These are the locations in the house.
 def foyer():
-    print '\n\n'
+    print '\n'
     p.location = 'foyer'
     move_actions()
     if catch_test() == True:
         win()    
     else:
         print 'You see stairs that lead up to a hallway ... '
-        print '\n\nMove to (K)itchen, (S)tudy, (G)reen Living Room or (U)p stairs'
+        print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or (U)p stairs'
         prompt_f = raw_input('Command: ')
         if prompt_f.upper() == 'K':
             cls()
@@ -66,14 +66,14 @@ def foyer():
             foyer()
 
 def kitchen():
-    print '\n\n'
+    print '\n'
     p.location = 'kitchen'
     move_actions()
     if catch_test() == True:
         win()    
     else:
-        print '\nMom just took two pizzas out of the oven ... '
-        print '\n\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
+        print 'Mom just took two pizzas out of the oven ... '
+        print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
         prompt_k = raw_input('Command: ')
         if prompt_k.upper() == 'F':
             cls()
@@ -96,13 +96,13 @@ def kitchen():
             kitchen()
 
 def study():
-    print '\n\n'
+    print '\n'
     p.location = 'study'
     move_actions()
     if catch_test() == True:
         win()    
     else:
-        print '\nYou see shelves lined with books ...'
+        print 'You see shelves lined with books ...'
         print '\nMove to (F)oyer or (K)itchen or (R)ead a book'
         prompt_st = raw_input('Command: ')
         if prompt_st.upper() == 'F':
@@ -119,13 +119,13 @@ def study():
             study()    
 
 def greenlr():
-    print '\n\n'
+    print '\n'
     p.location = 'green living room'
     move_actions()
     if catch_test() == True:
         win()    
     else:
-        print '\nYou see a coffee table scattered with books ...'
+        print 'You see a coffee table scattered with books ...'
         print '\nMove to (F)oyer or (D)ining Room'
         prompt_gl = raw_input('Command: ')
         if prompt_gl.upper() == 'F':
@@ -139,13 +139,13 @@ def greenlr():
             greenlr()    
 
 def diningroom():
-    print '\n\n'
+    print '\n'
     p.location = 'dining room'
     move_actions()
     if catch_test() == True:
         win()    
     else:
-        print '\nYou see a table with plates set on it ...'
+        print 'You see a table with plates set on it ...'
         print '\nMove to (K)itchen or (G)reen Living Room'
         prompt_dr = raw_input('Command: ')
         if prompt_dr.upper() == 'K':
@@ -159,13 +159,13 @@ def diningroom():
             diningroom()    
 
 def livingroom():
-    print '\n\n'
+    print '\n'
     p.location = 'living room'
     move_actions()
     if catch_test() == True:
         win()    
     else:
-        print '\nThere is a couch, two chairs, and a TV ...'
+        print 'There is a couch, two chairs, and a TV ...'
         print '\nMove to (K)itchen'
         prompt_lr = raw_input('Command: ')
         if prompt_lr.upper() == 'K':
@@ -176,13 +176,13 @@ def livingroom():
             livingroom()  
 
 def stairsup():
-    print '\n\n'
+    print '\n'
     p.location = 'stairs'
     move_actions()
     if catch_test() == True:
         win()    
     else:
-        print '\nYou\'re in an upstairs hallway ...'
+        print 'You\'re in an upstairs hallway ...'
         print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
         prompt_up = raw_input('Command: ')
         if prompt_up.upper() == 'O':
@@ -199,13 +199,13 @@ def stairsup():
             stairsup()  
     
 def office():
-    print '\n\n'
+    print '\n'
     p.location = 'office'
     move_actions()
     if catch_test() == True:
         win()    
     else:
-        print '\nThere is a computer on a desk ...'
+        print 'There is a computer on a desk ...'
         print '\nMove to (S)tairs'
         prompt_up = raw_input('Command: ')
         if prompt_up.upper() == 'S':
@@ -216,13 +216,13 @@ def office():
             office()  
 
 def bedroom():
-    print '\n\n'
+    print '\name'
     p.location = 'bedroom'
     move_actions()
     if catch_test() == True:
         win()    
     else:
-        print '\nThere is a bed; beside it is a large dresser ...'
+        print 'There is a bed; beside it is a large dresser ...'
         print '\nMove to (S)tairs'
         prompt_br = raw_input('Command: ')
         if prompt_br.upper() == 'S':
@@ -244,15 +244,16 @@ def move_actions():
     global move_count
     global entry_flag
     move_count += 1
-    print '                                   Move: ' + str(move_count)
+    print 'Move: ' + str(move_count) + '\n'
+    random_event()
     p.reveal()
     if entry_flag == True:
         c.run()
     if move_count == 0 and c.location == 'foyer':
         c.run()
     c.reveal()
+    print ''
     time.sleep(1)
-    random_event()
     entry_flag = True    
 
 def incorrect_entry():
@@ -282,7 +283,7 @@ def random_event():
     if draw_event == 4:
         x = len(general_events) - 1
         num = random.randint(0,x)
-        print '\nSomeone shouts: \"' + general_events[num] + '\"'
+        print '\nSomeone shouts: \"' + general_events[num] + '\"\n'
 
 # Test whether player and kitty have arrived in the same place
 def catch_test():
