@@ -182,7 +182,7 @@ def stairsup():
     if catch_test() == True:
         win()    
     else:
-        print 'You\'re in an upstairs hallway ...'
+        print 'The upstairs hallway leads to two rooms ...'
         print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
         prompt_up = raw_input('Command: ')
         if prompt_up.upper() == 'O':
