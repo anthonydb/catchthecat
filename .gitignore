@@ -1,4 +1,17 @@
+# General
 .DS_Store
+
+# Compiled python modules.
 *.pyc
-*.py~
-*~.*
+
+# Setuptools distribution.
+/build/
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+
+# Docs
+/docs/_build
+/docs/_static
+/docs/_templates
