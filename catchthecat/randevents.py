@@ -1,17 +1,16 @@
 general_events = [
     'The cat is on the loose!',
-    'The phone\'s ringing! It\'s mom\'s sister!',
+    'The phone\'s ringing! Someone answer it!',
     'Can someone bring down all the laundry?!',
     'A thunderstorm is coming! Bring in the furniture!',
-    'Quiet! Dad fell asleep on the couch!',
+    'Quiet! We\'re trying to sleep!',
     'Ack! We are out of toilet paper again!',
-    'The AC is broken! Call the repairman!',
     'You and me? I don\'t think we\'re on the same page!',
     'Who left the toilet seat up?!'
     ]
 
-locations_list = ['foyer', 'study', 'kitchen', 
-    'living room', 'dining room', 'stairs', 
+locations_list = ['foyer', 'study', 'kitchen',
+    'living room', 'dining room', 'stairs',
     'green living room', 'stairs', 'office', 'bedroom']
 
 run_choices = {

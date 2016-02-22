@@ -7,7 +7,7 @@ import random
 import time
 from datetime import datetime
 from randevents import general_events, book_quotes
-from classes import cat, player
+from classes import Cat, Player
 from db import make_db, insert_db, results_db
 from art import splash_text, win_text, house_diagram
 
@@ -15,8 +15,8 @@ calories = 0
 move_count = -1
 entry_flag = True
 food = 'x'
-c = cat()
-p = player()
+c = Cat()
+p = Player()
 
 # Set up the player and kitty. Player in foyer and kitty somewhere random.
 def start():
@@ -26,7 +26,7 @@ def start():
     print """
 Welcome to Catch the Cat! In this game, the objective is to
 catch the cat running through the rooms. Every time you move to
-a new room, the cat moves too! If you land in the same room as 
+a new room, the cat moves too! If you land in the same room as
 the cat, you win! Enjoy!
     """
     c.name = raw_input('\nType your cat\'s name and press Enter: ')
@@ -44,7 +44,7 @@ def foyer():
     p.location = 'foyer'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'You see stairs that lead up to a hallway ... '
         print '\nMove to (K)itchen, (S)tudy, (G)reen Living Room or (U)p stairs'
@@ -70,7 +70,7 @@ def kitchen():
     p.location = 'kitchen'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'Mom just took two pizzas out of the oven ... '
         print '\nMove to (F)oyer, (D)ining Room, (L)iving Room, (S)tudy or (E)at pizza'
@@ -100,7 +100,7 @@ def study():
     p.location = 'study'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'You see shelves lined with books ...'
         print '\nMove to (F)oyer or (K)itchen or (R)ead a book'
@@ -116,14 +116,14 @@ def study():
             study()
         else:
             incorrect_entry()
-            study()    
+            study()
 
 def greenlr():
     print '\n'
     p.location = 'green living room'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'You see a coffee table scattered with books ...'
         print '\nMove to (F)oyer or (D)ining Room'
@@ -136,14 +136,14 @@ def greenlr():
             diningroom()
         else:
             incorrect_entry()
-            greenlr()    
+            greenlr()
 
 def diningroom():
     print '\n'
     p.location = 'dining room'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'You see a table with plates set on it ...'
         print '\nMove to (K)itchen or (G)reen Living Room'
@@ -156,14 +156,14 @@ def diningroom():
             greenlr()
         else:
             incorrect_entry()
-            diningroom()    
+            diningroom()
 
 def livingroom():
     print '\n'
     p.location = 'living room'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'There is a couch, two chairs, and a TV ...'
         print '\nMove to (K)itchen'
@@ -173,14 +173,14 @@ def livingroom():
             kitchen()
         else:
             incorrect_entry()
-            livingroom()  
+            livingroom()
 
 def stairsup():
     print '\n'
     p.location = 'stairs'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'The upstairs hallway leads to two rooms ...'
         print '\nMove to the (O)ffice, the (B)edroom, or back down to the (F)oyer'
@@ -196,14 +196,14 @@ def stairsup():
             bedroom()
         else:
             incorrect_entry()
-            stairsup()  
-    
+            stairsup()
+
 def office():
     print '\n'
     p.location = 'office'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'There is a computer on a desk ...'
         print '\nMove to (S)tairs'
@@ -213,14 +213,14 @@ def office():
             stairsup()
         else:
             incorrect_entry()
-            office()  
+            office()
 
 def bedroom():
     print '\name'
     p.location = 'bedroom'
     move_actions()
     if catch_test() == True:
-        win()    
+        win()
     else:
         print 'There is a bed; beside it is a large dresser ...'
         print '\nMove to (S)tairs'
@@ -230,7 +230,7 @@ def bedroom():
             stairsup()
         else:
             incorrect_entry()
-            bedroom()  
+            bedroom()
 
 # Clear the screen using appropriate system command
 def cls():
@@ -254,13 +254,13 @@ def move_actions():
     c.reveal()
     print ''
     time.sleep(1)
-    entry_flag = True    
+    entry_flag = True
 
 def incorrect_entry():
     cls()
     print '\nIncorrect entry'
     global entry_flag
-    entry_flag = False    
+    entry_flag = False
 
 # Consume calories!
 def eat(food):
@@ -300,10 +300,10 @@ def catch_test():
     else:
         return False
 
-# FTW!    
+# FTW!
 def win():
-    global move_count    
-    print '\n\nYou caught the cat in ' + str(move_count) + ' moves!' 
+    global move_count
+    print '\n\nYou caught the cat in ' + str(move_count) + ' moves!'
     print win_text
     insert_db(p.name, move_count, datetime.now())
     raw_input('\nPress Enter to see a list of leaders!')
