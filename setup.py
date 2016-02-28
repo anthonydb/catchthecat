@@ -25,5 +25,10 @@ setup(
     author_email='adebarros@gmail.com',
     license='MIT',
     packages=['catchthecat'],
-    zip_safe=False
+    zip_safe=False,
+    entry_points={
+        'console_scripts': [
+            'catchthecat = catchthecat.catchthecat:start'
+        ]
+    }
 )

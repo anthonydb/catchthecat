@@ -1,5 +1,5 @@
 import random
-from randevents import locations_list, run_choices
+from .randevents import locations_list, run_choices
 
 # The kitty
 class Cat(object):
