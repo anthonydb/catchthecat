@@ -14,15 +14,15 @@ locations_list = ['foyer', 'study', 'kitchen',
     'green living room', 'stairs', 'office', 'bedroom']
 
 run_choices = {
-	'foyer': ['kitchen','study','green living room','stairs'],
-	'kitchen': ['foyer','dining room','living room','study'],
-	'study': ['foyer','kitchen'],
-	'green living room': ['foyer','dining room'],
-	'dining room': ['kitchen', 'green living room'],
-	'living room': ['kitchen'],
-	'stairs': ['office','foyer','bedroom'],
-	'office': ['stairs'],
-	'bedroom': ['stairs']
+    'foyer': ['kitchen','study','green living room','stairs'],
+    'kitchen': ['foyer','dining room','living room','study'],
+    'study': ['foyer','kitchen'],
+    'green living room': ['foyer','dining room'],
+    'dining room': ['kitchen', 'green living room'],
+    'living room': ['kitchen'],
+    'stairs': ['office','foyer','bedroom'],
+    'office': ['stairs'],
+    'bedroom': ['stairs']
     }
 
 book_quotes = [

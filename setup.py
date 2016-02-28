@@ -10,7 +10,7 @@ def readme():
 setup(
     name='catchthecat',
     version='0.1',
-    description='A cat on the loose in the house -- a simple game.',
+    description='A cat on the loose in the house -- a simple text game.',
     long_description=readme(),
     classifiers=[
         'Development Status :: 4 - Beta',
