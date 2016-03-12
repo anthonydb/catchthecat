@@ -7,7 +7,7 @@ import random
 import time
 from datetime import datetime
 from .randevents import general_events, book_quotes
-from .classes import Cat, Player
+from .beings import Cat, Player
 from .db import make_db, insert_db, results_db
 from .art import splash_text, win_text, house_diagram
 

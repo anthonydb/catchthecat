@@ -19,6 +19,7 @@ class Cat(object):
         l = len(choices) - 1
         self.location = choices[random.randint(0,l)]
 
+# The player
 class Player(object):
     def __init__(self):
         self.name = 'Player'
