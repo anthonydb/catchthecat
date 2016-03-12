@@ -1,12 +1,10 @@
 Catch the Cat - A simple Python text game
-By Anthony DeBarros and Nino DeBarros
+=========================================
 
-==========================================
-
-The object of this game will be to catch the cat running
-through the house. As you move from room to room, you will
-experience life around the house in a brand new way!
+Cat's on the loose! Move from room to room to try to catch the cat.
 
 Usage:
 
-python catchthecat.py
+.. code-block:: python
+
+    python catchthecat.py
