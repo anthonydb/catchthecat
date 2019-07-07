@@ -31,18 +31,18 @@ def results_db():
         LIMIT 20;
         ''')
     rows = cur.fetchall()
-    print '''\n\n
+    print('''\n\n
  _                    _
 | |                  | |
 | |     ___  __ _  __| | ___ _ __ ___
 | |    / _ \/ _` |/ _` |/ _ \ '__/ __|
 | |___|  __/ (_| | (_| |  __/ |  \__ \\
 \_____/\___|\__,_|\__,_|\___|_|  |___/
-    '''
-    print '\n\nNAME               MOVES          DATE'
-    print '____________________________________________________\n'
+    ''')
+    print('\n\nNAME               MOVES          DATE')
+    print('____________________________________________________\n')
     for row in rows:
-        print '%-20s %-10s %-30s' % (row[0], str(row[1]), row[2])
-    print '\n\n\n'
+        print('%-20s %-10s %-30s' % (row[0], str(row[1]), row[2]))
+    print('\n\n\n')
 
     conn.close()

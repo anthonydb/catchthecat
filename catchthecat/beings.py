@@ -1,5 +1,5 @@
 import random
-from .randevents import locations_list, run_choices
+from randevents import locations_list, run_choices
 
 # The kitty
 class Cat(object):
@@ -12,7 +12,8 @@ class Cat(object):
         self.location = locations_list[random.randint(1,l)]
 
     def reveal(self):
-        print '%s ran to the %s' % (self.name, self.location)
+        cat_reveal_string = '%s ran to the %s'  % (self.name, self.location)
+        print(cat_reveal_string)
 
     def run(self):
         choices = run_choices[self.location]
@@ -26,4 +27,5 @@ class Player(object):
         self.location = 'foyer'
 
     def reveal(self):
-        print '%s is in the %s' % (self.name, self.location)
+        player_reveal_string = '%s is in the %s' % (self.name, self.location)
+        print(player_reveal_string)
